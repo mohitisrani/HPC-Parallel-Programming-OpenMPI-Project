@@ -1,6 +1,12 @@
 # Parallel-Programming
 Performance Comparison Of Sorting Algorithms
 
+////mpirun -n <number_of_nodes> <executive_file_name> <sorting_technique{Q,M,R}> <printing/not printing data{P,N}> <size_of_array>////
+
+Program on sorting random numbers using three different sorting algorithms and comparison of their performance. The performance of each algorithm is subjective of the time taken to sort the data. 
+
+Quick sort, merge sort and radix sort algorithms are tested.
+
 OpenMPI was used as a Message Passing Interface(MPI) to parallelize the sorting algorithms. The algorithms were parallelized by 
 dividing the data equally into all the processors.The initialization of the process takes place in the root node. Root node(id=0) takes the array size from command argument given by the user and creates an array using the rand () function in C as below:
 
