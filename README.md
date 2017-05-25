@@ -1,13 +1,13 @@
 # Parallel-Programming
-Performance Comparison Of Sorting Algorithms
+## Performance Comparison Of Sorting Algorithms
 
-////mpirun -n <number_of_nodes> <executive_file_name> <sorting_technique{Q,M,R}> <printing/not printing data{P,N}> <size_of_array>////
+**mpirun -n <number_of_nodes> <executive_file_name> <sorting_technique{Q,M,R}> <printing/not printing data{P,N}> <size_of_array>**
 
-Program on sorting random numbers using three different sorting algorithms and comparison of their performance. The performance of each algorithm is subjective of the time taken to sort the data. 
+__Program on sorting random numbers using three different sorting algorithms and comparison of their performance. The performance of each algorithm is subjective of the time taken to sort the data. __
 
 Quick sort, merge sort and radix sort algorithms are tested.
 
-OpenMPI was used as a Message Passing Interface(MPI) to parallelize the sorting algorithms. The algorithms were parallelized by 
+**OpenMPI** was used as a __Message Passing Interface(MPI)__ to parallelize the sorting algorithms. The algorithms were parallelized by 
 dividing the data equally into all the processors.The initialization of the process takes place in the root node. Root node(id=0) takes the array size from command argument given by the user and creates an array using the rand () function in C as below:
 
 array= rand () % (max_num + 1 - min_num) + min_num;
@@ -18,7 +18,7 @@ The overall sorting process requires nodes of the format 2n for maximum efficien
 
 Then all the nodes including the root node individually perform the sorting for their data set. Sorting technique used (quick, merge or radix sort) is specified by the user in the command line argument as:
 
-mpirun -n <number_of_nodes> <executive_file_name> <sorting_technique{Q,M,R}> <printing/not printing data{P,N}> <size_of_array>
+**mpirun -n <number_of_nodes> <executive_file_name> <sorting_technique{Q,M,R}> <printing/not printing data{P,N}> <size_of_array>**
 
 The string used to specify the sorting technique is compared using the function strcmp() as:
 
